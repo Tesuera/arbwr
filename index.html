@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eaint Eaint <3</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    
+    <div style="height: 100vh;">
+        <button id="addBtn">Get ArBwr From Koko</button>
+        <div style="display: flex; flex-direction: column; flex-wrap: wrap; height: 95%;" id="cont">
+            
+        </div>
+    </div>
+
+
+    <script>
+        let addBtn = document.querySelector('#addBtn');
+        let cont = document.querySelector('#cont');
+        let count = 0;
+        let myInterVal;
+
+        let validate = ['eaint eaint', 'eaint', 'eaint chue khin', 'eck', '88'];
+
+        addBtn.addEventListener('click', addArr);
+
+        function addArr () {
+            let name = prompt('Enter Your Name: ');
+            if(validate.includes(name.toLowerCase())) {
+                cont.innerHTML = ""
+                myInterVal = setInterval(() => {
+                    let para = document.createElement("p");
+                    para.innerText = "arbwr";
+                    cont.appendChild(para);
+                    count++;
+
+                    if(count == 500) {
+                        alert("Whoa, slow down! You're getting too many arbwrs at once.");
+                        clearInterval(myInterVal);
+                    }
+                }, 10);
+
+                
+            } else {
+                alert("Who in the world are you? My lips are reserved for my special someone, not random someones!");
+            }
+        }
+    </script>
+</body>
+</html>
